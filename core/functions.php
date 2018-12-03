@@ -1022,6 +1022,20 @@ function viewInclude($file) {
 	return  $tmpPath.$file;
 }
 
+function makeQrCodeByUrl($url){
+    //二维码信息，用urlencode编码
+    $data = urlencode($url);
+    //生成二维码尺寸
+    $size = '300x300';
+    //完整的API地址
+    $qrurl = "http://chart.googleapis.com/chart?chs=$size&cht=qr&chl=$data&chld=L|1&choe=UTF-8";
+    //获取二维码
+    $qrcode = file_get_contents($qrurl);
+    //输出图片
+    header('Content-type: image/png');
+    return $qrcode;
+}
+
 
 // 图片转64位编码
 function base64EncodeImage($image_file) {
