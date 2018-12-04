@@ -1036,6 +1036,10 @@ function makeQrCodeByUrl($url){
     return $qrcode;
 }
 
+function deleteBlank($str){
+    return php_strip_whitespace($str);
+}
+
 
 // 图片转64位编码
 function base64EncodeImage($image_file) {
