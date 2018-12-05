@@ -1037,6 +1037,7 @@ function makeQrCodeByUrl($url){
 }
 
 function deleteBlank($str){
+
     return php_strip_whitespace($str);
 }
 
