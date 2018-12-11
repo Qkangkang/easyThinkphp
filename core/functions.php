@@ -329,52 +329,6 @@ function F($name, $value = '', $effective = 1800) {
 	}else{
 		return Cache::set($name,$value,$effective);
 	}
-	
-// 	static $_cache = array ();
-// 	$filename = $path . md5 ( $name ) . '.php';
-// 	if (! is_dir ( $path )) {
-// 		mkdir ( $path, '0777', true );
-// 	}
-// 	if ('' !== $value) {
-// 		if (is_null ( $value )) {
-// 			// 删除缓存
-// 			unset ( $_cache [$name] );
-// 			return unlink ( $filename );
-// 		} else {
-// 			$data ['data'] = $value;
-// 			$data ['time'] = time () + $effective;
-// 			file_put_contents ( $filename, serialize ( $data ) );
-// 			// 缓存数据
-// 			$_cache [$name] = $data;
-// 			return null;
-// 		}
-// 	}
-	
-// 	// 获取缓存数据
-// 	if (isset ( $_cache [$name] )) {
-// 		if ($_cache [$name] ['time'] > time ()) {
-// 			return $_cache [$name] ['data'];
-// 		} else {
-// 			unset ( $_cache [$name] );
-// 			unlink ( $filename );
-// 			return false;
-// 		}
-// 	}
-	
-// 	if (is_file ( $filename )) {
-// 		$value = unserialize ( file_get_contents ( $filename ) );
-// 		if ($value ['time'] > time ()) {
-// 			$_cache [$name] = $value;
-// 			return $value ['data'];
-// 		} else {
-// 			unset ( $_cache [$name] );
-// 			unlink ( $filename );
-// 			return false;
-// 		}
-// 	} else {
-// 		$value = false;
-// 	}
-// 	return $value;
 }
 
 /**
